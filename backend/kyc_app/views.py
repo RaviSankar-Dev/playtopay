@@ -24,6 +24,7 @@ class SignupView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]
+    authentication_classes = []
 
 class MyKYCView(APIView):
     permission_classes = [IsMerchant]

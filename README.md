@@ -1,78 +1,73 @@
-# Playto KYC Pipeline Challenge
+# Playto KYC Pipeline System 🚀
 
-A full-stack web application for a merchant KYC onboarding and reviewer approval system.
+A high-performance, ultra-premium Merchant Onboarding and Compliance Audit system. Built for speed, security, and exceptional user experience.
 
-## Tech Stack
-* **Frontend:** React, Tailwind CSS, Zustand, React Router DOM
-* **Backend:** Django, Django REST Framework, SimpleJWT
-* **Database:** SQLite
+![Premium UI](https://img.shields.io/badge/UI-Ultra--Premium-f2b759?style=for-the-badge&logo=glassdoor&logoColor=0a4a3c)
+![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20Django%20%7C%20Tailwind%204-0a4a3c?style=for-the-badge)
 
-## Features
-* **Role-Based Authentication:** Merchants can manage their KYC submissions, and Reviewers can view all submissions in a queue.
-* **State Machine:** Strict state transitions handled centrally (`draft -> submitted -> under_review -> approved/rejected`).
-* **Multi-Step Form:** Merchant dashboard includes a multi-step form for personal details, business details, and document upload (validated for max 5MB and specific types).
-* **Metrics Dashboard:** Reviewer dashboard features vital statistics (Queue length, avg time, approval rate, risk).
-* **Document Management:** Upload, preview, and review functionality for PAN, Aadhaar, and Bank Statements.
+## ✨ Executive Overview
+This system provides a seamless, decentralized pipeline for merchant verification. Featuring a state-of-the-art **"Audit Command Center"** for reviewers and a **"Bento-style Onboarding"** experience for merchants.
 
-## Local Setup Instructions
+### 💎 Key Features
+*   **Role-Based Security**: Advanced authentication protocols with secure state-driven access control.
+*   **State Machine Architecture**: Centralized lifecycle management (`Draft` → `Submitted` → `Auditing` → `Cleared/Declined`).
+*   **Intelligent Onboarding**: Multi-step merchant hub with real-time sync, file validation (5MB max), and cryptographic asset tracking.
+*   **Audit Command Center**: High-density reviewer dashboard with real-time operational metrics (Queue length, Avg. Response Time, SLA Risk).
+*   **Modern Aesthetics**: "Apple-style" glassmorphism, layered shadows, and high-performance cubic-bezier animations.
 
-### 1. Backend Setup
+---
 
+## 🛠️ Technical Stack
+- **Frontend**: React 19 (Vite), Tailwind CSS 4, Zustand (State), Axios (Network), React Router 7
+- **Backend**: Django 5.1, Django REST Framework, SimpleJWT (Auth), SQLite (Dev DB)
+- **Design System**: Custom design tokens with mesh gradients and backdrop-blur utilities.
+
+---
+
+## 🚀 Rapid Deployment
+
+### 1. Engine (Backend)
 ```bash
 cd backend
 python -m venv venv
-# On Windows:
+# Windows:
 .\venv\Scripts\activate
-# On Mac/Linux:
+# Mac/Linux:
 source venv/bin/activate
 
-pip install -r requirements.txt # (or install django djangorestframework djangorestframework-simplejwt django-cors-headers)
-
-python manage.py makemigrations
+pip install -r requirements.txt
 python manage.py migrate
-
-# Seed the database with mock data (Merchant 1, Merchant 2, Reviewer 1)
 python manage.py seed
-
-# Run the server
 python manage.py runserver
 ```
 
-### 2. Frontend Setup
-
+### 2. Interface (Frontend)
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-### 3. Usage
+---
 
-Access the frontend at `http://localhost:5173`.
-* **Login as Reviewer:** `reviewer1` / `password123`
-* **Login as Draft Merchant:** `merchant_draft` / `password123`
-* **Login as Under Review Merchant:** `merchant_review` / `password123`
+## 🔑 Operational Credentials
+Access the system via the following pre-authorized identities:
 
-## Deployment Guides
+| Role | Username | Password |
+| :--- | :--- | :--- |
+| **System Auditor** | `reviewer1` | `password123` |
+| **Merchant (Draft)** | `merchant_draft` | `password123` |
+| **Merchant (Active)** | `merchant_review` | `password123` |
 
-### Frontend -> Vercel
-1. Push the `frontend` directory to a GitHub repository.
-2. Link the repository to Vercel.
-3. Vercel will automatically detect the Vite setup. Set the Root Directory to `frontend`.
-4. Add any required environment variables (e.g., API base URL).
-5. Deploy!
+---
 
-### Backend -> Render
-1. Push the `backend` directory to a GitHub repository.
-2. In Render, create a new **Web Service**.
-3. Select your repository and set the Root Directory to `backend`.
-4. Build Command: `pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate`
-5. Start Command: `gunicorn core.wsgi:application`
-6. Add environment variables: `SECRET_KEY`, `DEBUG=False`, `ALLOWED_HOSTS`, and configure external storage like AWS S3 for media uploads.
+## 📈 System Architecture
+The application utilizes a strict state-transition protocol to ensure data integrity. 
+1. **Merchant Entry**: Entity details and assets are established in the registry.
+2. **Protocol Submission**: Submission triggers a lock on the record, moving it to the Audit Queue.
+3. **Audit Execution**: Reviewers lock the record for auditing, performing asset verification.
+4. **Final Determination**: Approval triggers clearance; rejection requires mandatory rationale.
 
-login details
-You can login with the pre-seeded accounts:
+---
 
-Reviewer: Username: reviewer1, Password: password123
-Merchant (Draft): Username: merchant_draft, Password: password123
-Merchant (Under Review): Username: merchant_review, Password: password123
+Designed with ❤️ by **Playto Engineering**

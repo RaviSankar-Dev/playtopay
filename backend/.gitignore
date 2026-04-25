@@ -1,1 +1,26 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+
+# Environment Variables
 .env
+.venv
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
