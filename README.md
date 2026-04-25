@@ -69,3 +69,10 @@ Access the frontend at `http://localhost:5173`.
 4. Build Command: `pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate`
 5. Start Command: `gunicorn core.wsgi:application`
 6. Add environment variables: `SECRET_KEY`, `DEBUG=False`, `ALLOWED_HOSTS`, and configure external storage like AWS S3 for media uploads.
+
+login details
+You can login with the pre-seeded accounts:
+
+Reviewer: Username: reviewer1, Password: password123
+Merchant (Draft): Username: merchant_draft, Password: password123
+Merchant (Under Review): Username: merchant_review, Password: password123

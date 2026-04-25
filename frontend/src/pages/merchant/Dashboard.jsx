@@ -141,17 +141,17 @@ export default function MerchantDashboard() {
               <h3 className="text-xl font-semibold mb-4">Document Upload</h3>
               <div className="mb-3">
                 <label className="block mb-1">PAN Card (PDF/JPG/PNG)</label>
-                {kycData?.pan_card && <a href={kycData.pan_card.startsWith('http') ? kycData.pan_card : `http://localhost:8000${kycData.pan_card}`} target="_blank" rel="noreferrer" className="text-blue-500 block mb-2 text-sm">View Current PAN</a>}
+                {kycData?.pan_card && <a href={kycData.pan_card.startsWith('http') ? kycData.pan_card : `${import.meta.env.VITE_BASE_URL || 'http://localhost:8000'}${kycData.pan_card}`} target="_blank" rel="noreferrer" className="text-blue-500 block mb-2 text-sm">View Current PAN</a>}
                 <input disabled={!isEditable} type="file" name="pan_card" onChange={handleFileChange} className="w-full border p-2 rounded" />
               </div>
               <div className="mb-3">
                 <label className="block mb-1">Aadhaar Card (PDF/JPG/PNG)</label>
-                {kycData?.aadhaar_card && <a href={kycData.aadhaar_card.startsWith('http') ? kycData.aadhaar_card : `http://localhost:8000${kycData.aadhaar_card}`} target="_blank" rel="noreferrer" className="text-blue-500 block mb-2 text-sm">View Current Aadhaar</a>}
+                {kycData?.aadhaar_card && <a href={kycData.aadhaar_card.startsWith('http') ? kycData.aadhaar_card : `${import.meta.env.VITE_BASE_URL || 'http://localhost:8000'}${kycData.aadhaar_card}`} target="_blank" rel="noreferrer" className="text-blue-500 block mb-2 text-sm">View Current Aadhaar</a>}
                 <input disabled={!isEditable} type="file" name="aadhaar_card" onChange={handleFileChange} className="w-full border p-2 rounded" />
               </div>
               <div className="mb-3">
                 <label className="block mb-1">Bank Statement (PDF/JPG/PNG)</label>
-                {kycData?.bank_statement && <a href={kycData.bank_statement.startsWith('http') ? kycData.bank_statement : `http://localhost:8000${kycData.bank_statement}`} target="_blank" rel="noreferrer" className="text-blue-500 block mb-2 text-sm">View Current Statement</a>}
+                {kycData?.bank_statement && <a href={kycData.bank_statement.startsWith('http') ? kycData.bank_statement : `${import.meta.env.VITE_BASE_URL || 'http://localhost:8000'}${kycData.bank_statement}`} target="_blank" rel="noreferrer" className="text-blue-500 block mb-2 text-sm">View Current Statement</a>}
                 <input disabled={!isEditable} type="file" name="bank_statement" onChange={handleFileChange} className="w-full border p-2 rounded" />
               </div>
             </div>

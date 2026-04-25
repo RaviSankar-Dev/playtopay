@@ -108,7 +108,7 @@ export default function ApplicationDetail() {
               <div key={doc} className="border p-4 rounded bg-gray-50 flex flex-col items-center">
                 <span className="font-semibold mb-2 capitalize">{doc.replace('_', ' ')}</span>
                 {appData[doc] ? (
-                  <a href={appData[doc].startsWith('http') ? appData[doc] : `http://localhost:8000${appData[doc]}`} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">
+                  <a href={appData[doc].startsWith('http') ? appData[doc] : `${import.meta.env.VITE_BASE_URL || 'http://localhost:8000'}${appData[doc]}`} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">
                     View Document
                   </a>
                 ) : (
